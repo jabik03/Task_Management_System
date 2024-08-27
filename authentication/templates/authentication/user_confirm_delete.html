@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mx-auto p-8">
+    <h1 class="text-3xl font-bold mb-4">Удаление пользователя</h1>
+    <p>Вы уверены, что хотите удалить пользователя {{ object.username }}?</p>
+    <form method="post" class="mt-4">
+        {% csrf_token %}
+        <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Удалить</button>
+        <a href="{% url 'authentication:user_list' %}" class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">Отмена</a>
+    </form>
+</div>
+{% endblock %}

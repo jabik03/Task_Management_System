@@ -1,0 +1,25 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'css/output.css' %}" rel="stylesheet">
+    <title>Доступ запрещен</title>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="bg-white shadow-lg rounded-lg p-8 max-w-xl w-full">
+        <div class="flex justify-center mb-4">
+            <img src="{% static 'images/forbidden_icon.png' %}" alt="Access Denied" class="w-20 h-20">
+        </div>
+        <h2 class="text-center text-4xl font-extrabold text-gray-900 mb-4">Доступ запрещен</h2>
+        <p class="text-center text-lg text-gray-600 mb-6">У вас нет прав для доступа к этой странице.</p>
+        <div class="flex justify-center">
+            <a href="{% url 'tasksystem:content' %}" class="px-6 py-3 bg-blue-500 hover:bg-blue-700 text-white font-bold rounded-lg">
+                Вернуться на главную
+            </a>
+        </div>
+    </div>
+</body>
+</html>

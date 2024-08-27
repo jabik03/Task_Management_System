@@ -1,0 +1,71 @@
+данные админа:
+username: admin
+password: admin
+
+Менеджер 1: Джабир Агабалаев
+Логин: jabir_a
+Пароль: Jf1nCC2_
+Email: jabir.agabalaev@gmail.com
+Имя: Джабир
+Фамилия: Агабалаев
+
+Менеджер 2: Абдулла Анхаев
+Логин: abdulla_ank
+Пароль: ZBJz30_u
+Email: abdulla.ankhaev@gmail.com
+Имя: Абдулла
+Фамилия: Анхаев
+
+данные пользователя: исполнитель
+username: vitya
+email: vitya@gmail.com
+password: vi1_KJTu
+Имя: Витя
+Фамилия: Витяев
+
+данные пользователя: исполнитель
+username: zxc
+email: zxc@gmail.com
+password: E_6yXQQp
+
+Пользователь 1: Иван Иванов
+Логин: ivan_ivanov
+Пароль: Ivan1234!
+Email: ivan.ivanov@example.com
+Имя: Иван
+Фамилия: Иванов
+
+Пользователь 2: Анна Петрова
+Логин: anna_petrova
+Пароль: Anna1234!
+Email: anna.petrova@example.com
+Имя: Анна
+Фамилия: Петрова
+
+Пользователь 3: Сергей Смирнов
+Логин: sergey_smirnov
+Пароль: 5u_01Ihu
+Email: sergey.smirnov@example.com
+Имя: Сергей
+Фамилия: Смирнов
+
+Пользователь 4: Мария Кузнецова
+Логин: maria_kuznetsova
+Пароль: Maria1234!
+Email: maria.kuznetsova@example.com
+Имя: Мария
+Фамилия: Кузнецова
+
+Пользователь 5: Дмитрий Соколов
+Логин: dmitry_sokolov
+Пароль: JT8H_7yn
+Email: dmitry.sokolov@example.com
+Имя: Дмитрий
+Фамилия: Соколов
+
+Пользователь 6: Елена Алексеева
+Логин: elena_alekseeva
+Пароль: Elena1234!
+Email: elena.alekseeva@example.com
+Имя: Елена
+Фамилия: Алексеева

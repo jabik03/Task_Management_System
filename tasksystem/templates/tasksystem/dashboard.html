@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<section class="text-gray-600 body-font">
+  <div class="container px-5 py-24 mx-auto">
+    <div class="flex flex-wrap w-full mb-8">
+      <div class="w-full mb-6 lg:mb-0">
+        <h1 class="sm:text-4xl text-5xl font-medium title-font mb-2 text-gray-900">Statistic</h1>
+        <div class="h-1 w-20 bg-indigo-500 rounded"></div>
+      </div>
+    </div>
+    <div class="flex flex-wrap -m-4 text-center">
+      {% for stat in stats %}
+      <div class="p-4 sm:w-1/4 w-1/2">
+        <div class="bg-beige-200 border-4 border-indigo-500 rounded-[20px] p-6 h-full flex flex-col justify-center">
+            <img src="{% static 'images/dashboard/' %}{{ stat.icon }}" alt="{{ stat.label }}" class="size-20 mx-auto mb-4">
+            <h2 class="title-font font-medium sm:text-4xl text-3xl text-gray-900">{{ stat.value }}</h2>
+            <p class="leading-relaxed text-gray-700 font-bold">{{ stat.label }}</p>
+            {% if stat.extra %}
+            <p class="leading-relaxed text-gray-700">{{ stat.extra }}</p>
+            {% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock content %}

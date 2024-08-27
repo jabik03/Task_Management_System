@@ -1,0 +1,36 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="max-w-4xl mx-auto bg-white rounded-xl shadow-md overflow-hidden p-8 my-8">
+  <h1 class="text-3xl font-bold text-indigo-600 mb-6">Создание задачи</h1>
+
+  <form method="post" enctype="multipart/form-data" class="space-y-6">
+    {% csrf_token %}
+    
+    <div class="space-y-4">
+      <div class="form-error text-red-600">{{ form.non_field_errors }}</div>
+      {% for f in form %}
+      <div>
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="{{ f.id_for_label }}">{{ f.label }}:</label>
+        {{ f }}
+        <div class="form-error text-red-600">{{ f.errors }}</div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <div class="mt-6 flex justify-evenly items-center">
+      <button onclick="history.back()" class="border-2 border-[#00d6c6] rounded-lg w-24 py-1 transition-transform duration-300 transform hover:scale-110">
+        <img class="size-10 mx-auto" src="{% static 'images/back_btn.png' %}" alt="back_btn" />
+      </button>
+
+      <button type="submit" class="border-2 border-[#b5e61d] rounded-lg w-24 py-1 transition-transform duration-300 transform hover:scale-110">
+        <img class="size-10 mx-auto" src="{% static 'images/save_btn.png' %}" alt="save_btn" />
+      </button>
+
+      {% comment %} <button type="submit" class="w-full py-2 px-4 bg-indigo-500 hover:bg-indigo-700 text-white font-bold rounded-lg transition-colors duration-200">Создать</button> {% endcomment %}
+    </div>
+  </form>
+</div>
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends "base.html" %} {% load static %} {% block content %}
+<div class="max-w-4xl mx-auto bg-white rounded-xl shadow-md overflow-hidden p-8 my-8">
+  <div class="mb-6">
+    <h1 class="text-3xl font-bold text-indigo-600 mb-4 break-words">{{ task.title }}</h1>
+    <p class="text-gray-700 text-lg">{{ task.description }}</p>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+    <div class="bg-gray-100 p-4 rounded-lg">
+      <div class="text-gray-500"><strong>Автор:</strong> {{ task.author }}</div>
+    </div>
+    <div class="bg-gray-100 p-4 rounded-lg">
+      <div class="text-gray-500"><strong>Исполнитель:</strong> {{ task.worker }}</div>
+    </div>
+    <div class="bg-gray-100 p-4 rounded-lg">
+      <div class="text-gray-500"><strong>Статус:</strong> {{ task.get_status_display }}</div>
+    </div>
+    <div class="bg-gray-100 p-4 rounded-lg">
+      <div class="text-gray-500"><strong>Дата создания:</strong> {{ task.time_create }}</div>
+    </div>
+  </div>
+  <div class="mt-8 flex justify-between items-center">
+    <form action="javascript:history.back()" class="">
+      <button class="border-2 border-[#00d6c6] rounded-lg w-24 py-1 transition-transform duration-300 transform hover:scale-110">
+        <img class="size-10 mx-auto" src="{% static 'images/back_btn.png' %}" alt="back_btn" />
+      </button>
+    </form>
+
+    {% if task.status == task.Status.PENDING and user.role == user.Role.WORKER %}
+    <form action="{% url 'tasksystem:claim_task' task.pk %}" class="">
+      <button class="border-2 border-[#f27788] rounded-lg w-24 py-1 transition-transform duration-300 transform hover:scale-110">
+        <img class="size-10 mx-auto" src="{% static 'images/take_btn.png' %}" alt="edit_btn" />
+      </button>
+    </form>
+    {% endif %}
+
+    {% if not task.status == task.Status.COMPLETED %}
+    <form action="{% url 'tasksystem:update_task' task.slug %}" class="">
+      <button class="border-2 border-[#fcca3d] rounded-lg w-24 py-1 transition-transform duration-300 transform hover:scale-110">
+        <img class="size-10 mx-auto" src="{% static 'images/edit_btn.png' %}" alt="edit_btn" />
+      </button>
+    </form>
+    {% else %}
+    <span class="sr-only">Редактировать</span>
+    {% endif %}
+    
+  </div>
+</div>
+{% endblock content %}
